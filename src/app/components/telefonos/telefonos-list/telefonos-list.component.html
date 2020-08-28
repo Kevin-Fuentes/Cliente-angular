@@ -1,0 +1,49 @@
+
+<div class="container mt-4">
+     <div class="row">
+       <h3>Listado de Telefonos </h3>
+       <a class="btn btn-primary btn-sm ml-auto" routerLink="/empleados">Ver empleados</a> 
+   
+     </div>
+   
+     <br />
+     <table class="table">
+       <thead>
+         <th>Nmr</th>
+         <th>Tipo</th>
+         <th>Numero</th>
+         <th>Indicativo</th>
+         <th>personaId</th>
+         <th>Opciones</th>
+       </thead>
+       <tbody>
+         <tr *ngFor="let telefono of telefonoData let i = index">
+           <td>{{ i + 1 }}</td>
+           <td>{{ telefono.tipo }}</td>
+           <td>
+             {{ telefono.numero }}
+           </td>
+           <td>{{ telefono.indicativo }}</td>
+           <td>{{ telefono.personaId }}</td>
+          
+       
+           <td>
+             <button routerLink="telefonos-form/{{telefono.id}}" class="btn btn-primary btn-sm">Actualizar
+   
+             </button>
+           </td>
+   
+           <td>
+             <button data-index="i" (click)="deleteTelefono($event)" id='{{telefono.id}}' class="btn btn-primary btn-sm">Eliminar</button>
+           </td>
+         </tr>
+       </tbody>
+     </table>
+     <ng-template>
+       <h5>No hay Empleados</h5>
+     </ng-template>
+   
+     
+   </div>
+   
+   

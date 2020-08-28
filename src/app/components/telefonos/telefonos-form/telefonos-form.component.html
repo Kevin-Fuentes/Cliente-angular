@@ -1,0 +1,65 @@
+<div class="container mt-4">
+     <div class="row">
+       <!--(ngSubmit)="onSubmit()" -->
+       <form [formGroup]="TelefonoForm">
+          <div class="form-group">
+               <label for="tipo">Tipo de telefono</label>
+               <select 
+               formControlName="tipo"
+               [className]="['form-control']" id="tipo">
+                 <option>tel</option>
+                 <option>cell</option>
+               </select>
+             </div>
+   
+         <div class="form-group">
+           <label for="numero">Numero: </label>
+           <input
+           required
+           formControlName="numero"
+             type="text"
+             [className]="[
+               'form-control rounded-0',
+               numero.invalid ? ' is-invalid' : ''
+             ]"
+             id="numero"
+             placeholder="Ingrese sus numero"
+           />
+         </div>
+
+         <div class="form-group">
+          <label for="indicativo">Indicativo: </label>
+          <input
+          required
+          formControlName="indicativo"
+            type="text"
+            [className]="[
+              'form-control rounded-0',
+              numero.invalid ? ' is-invalid' : ''
+            ]"
+            id="indicativo"
+            placeholder="Ingrese sus numero"
+          />
+        </div>
+         
+         <div class="form-group">
+           <label for="personaId">usuario: </label>
+           <input
+           formControlName="personaId"
+             type="text"
+             [className]="[
+               'form-control rounded-0',
+               personaId.invalid ? ' is-invalid' : ''
+             ]"
+             id="personaId "
+             placeholder="Asigne su numero"
+           />
+         </div>
+   
+        
+   
+         <button (click)="postTelefono()" class="btn btn-primary">Submit</button>
+       </form>
+     </div>
+   </div>
+   

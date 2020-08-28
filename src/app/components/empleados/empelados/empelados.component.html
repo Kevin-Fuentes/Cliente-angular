@@ -1,0 +1,93 @@
+<div class="container mt-4">
+     <div class="row">
+       <!--(ngSubmit)="onSubmit()" -->
+       <form [formGroup]="EmpleadorForm">
+         <div class="form-group">
+           <label for="nombres">Nombres: </label>
+           <input
+
+           required
+             type="text"
+             formControlName="nombres"
+             [className]="[
+               'form-control rounded-0',
+               nombres.invalid ? ' is-invalid' : ''
+             ]"
+             id="nombres"
+             placeholder="Ingrese sus nombres"
+           />
+         </div>
+   
+         <div class="form-group">
+           <label for="apellidos">Apellidos: </label>
+           <input
+           required
+           formControlName="apellidos"
+             type="text"
+             [className]="[
+               'form-control rounded-0',
+               apellidos.invalid ? ' is-invalid' : ''
+             ]"
+             id="apellidos"
+             placeholder="Ingrese sus Apellidos"
+           />
+         </div>
+         <div class="form-group">
+           <label for="tipoIdentificacion">Tipo de Identificacion</label>
+           <select 
+           formControlName="tipoIdentificacion"
+           [className]="['form-control']" id="tipoIdentificacion">
+             <option>cc</option>
+             <option>nit</option>
+           </select>
+         </div>
+         <div class="form-group">
+           <label for="identificacion">Identificacion: </label>
+           <input
+           required
+           formControlName="identificacion"
+             type="text"
+             [className]="[
+               'form-control rounded-0',
+               identificacion.invalid ? ' is-invalid' : ''
+             ]"
+             id="identificacion"
+             placeholder="ingrese su identificacion"
+           />
+         </div>
+   
+         <div class="form-group">
+           <label for="correo">Correo: </label>
+           <input
+           formControlName="correo"
+             type="correo"
+             [className]="[
+               'form-control rounded-0',
+               correo.invalid ? ' is-invalid' : ''
+             ]"
+             id="correo"
+             aria-describedby="emailHelp"
+             placeholder="Ingrese su correo"
+           />
+         </div>
+   
+         <div class="form-group">
+           <label for="salario">salario Mensual: </label>
+           <input
+           required
+           formControlName="salario"
+             type="text"
+             [className]="[
+               'form-control rounded-0',
+               salario.invalid ? 'is-invalid' : ''
+             ]"
+             id="salario"
+             placeholder="Ingrese su salario mensual"
+           />
+         </div>
+   
+         <button (click)="postEmpleado()" class="btn btn-primary">Submit</button>
+       </form>
+     </div>
+   </div>
+   

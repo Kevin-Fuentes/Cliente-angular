@@ -1,0 +1,57 @@
+
+<div class="container mt-4">
+  <div class="row">
+    <h3>Listado de Empleados</h3>
+    <a class="btn btn-primary btn-sm ml-auto" routerLink="/empleados-form">Crear Empleado</a> 
+    
+    <a class="btn btn-primary btn-sm " routerLink="/empleados/telefonos">Ver Telefonos</a> 
+  </div>
+
+
+
+  <br />
+  <table class="table">
+    <thead>
+      <th>Nmr</th>
+      <th>Nombres</th>
+      <th>apellidos</th>
+      <th>Tipo identificacion</th>
+      <th>identificacion</th>
+      <th>correo Electronico</th>
+      <th>salario Mensual</th>
+      <th>Opciones</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let empleado of empleadosData let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ empleado.nombres }}</td>
+        <td>
+          {{ empleado.apellidos }}
+        </td>
+        <td>{{ empleado.tipoIdentificacion }}</td>
+        <td>{{ empleado.identificacion }}</td>
+        <td>{{ empleado.correo }}</td>
+        <td>{{ empleado.salarioMensual }}</td>
+    
+        <td>
+          <button routerLink="/empleados-form/{{empleado.id}}" class="btn btn-primary btn-sm">Actualizar
+
+          </button>
+        </td>
+
+        <td>
+          <button data-index="i" (click)="deleteEmpleado($event)" id='{{empleado.id}}' class="btn btn-primary btn-sm">Eliminar</button>
+        </td>
+        <td>
+        <a class="btn btn-primary btn-sm  " routerLink="telefonos-form">add Tel</a> 
+      </td>
+      </tr>
+    </tbody>
+  </table>
+  <ng-template>
+    <h5>No hay Empleados</h5>
+  </ng-template>
+
+  
+</div>
+
